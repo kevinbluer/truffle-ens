@@ -74,4 +74,6 @@ module.exports = function(deployer, network) {
     deployAuctionRegistrar(deployer, tld);
   }
 
+  deployFIFSRegistrar(deployer, tld);
+
 };
