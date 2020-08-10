@@ -7,7 +7,7 @@ const FIFSRegistrar = artifacts.require('./FIFSRegistrar.sol');
 // TODO: align the contract name with the source code file name.
 const Registrar = artifacts.require('./HashRegistrar.sol');
 const web3 = new (require('web3'))();
-const namehash = require('eth-ens-namehash');
+const { hash } = require('eth-ens-namehash');
 
 /**
  * Calculate root node hashes given the top level domain(tld)
@@ -16,7 +16,7 @@ const namehash = require('eth-ens-namehash');
  */
 function getRootNodeFromTLD(tld) {
   return {
-    namehash: namehash(tld),
+    namehash: hash(tld),
     sha3: web3.sha3(tld)
   };
 }
